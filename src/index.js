@@ -1,5 +1,6 @@
-import React form "react"
-import ReactDOM form "react-dom"
+import React from "react"
+import ReactDOM from "react-dom"
+require("./index.html")
 
 ReactDOM.render(
     <div>hello from react</div>
