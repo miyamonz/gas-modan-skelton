@@ -25,7 +25,7 @@
     "webpack": "^1.14.0"
   },
   "scripts": {
-    "gasify": "rm -r dst && mkdir dst && browserify src/global.js -t [babelify --presets es2015 ] -p gasify -o dst/global.js",
+    "gasify": "rm -r dst ; mkdir dst && browserify src/global.js -t [babelify --presets es2015 ] -p gasify -o dst/global.js",
     "build": " webpack && npm run gasify && node ./inline.js",
     "push": "npm run build && gapps push",
     "watch": "mocha -w --compilers js:babel-register",
