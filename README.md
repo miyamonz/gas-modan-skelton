@@ -16,6 +16,24 @@ google apps script でローカルでコード書いてpushというのがnode-g
 
 などのスケルトンを用意した
 
+## はじめかた
+
+- `npm i`する
+- gapps コマンドを入れておく。
+```
+$ npm i -g node-google-apps-script
+```
+
+- gapps authを済ませておく(gapps を使うのに一回必要)
+- gapps init <project id> をする. gapps.config.jsonが出る。（projectごとに必要）
+- gapps.config.json のフォルダ指定をsrcからdstにする
+
+これで準備ok
+
+`src/index.html`と`src/index.js`でクライアントサイドをやって、`src/global.js`でgasの関数を定義しよう。
+`npm run build`や`npm run push`でトランスパイルや`gapps push`ができます
+
+
 ## 説明
 フロント側はwebpackでhtml,js,cssをbundle/ に出力
 そのあとhtmlのタグにjsとcssをcheerioでぶち込んでdst/index.htmlにする
