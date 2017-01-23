@@ -1,0 +1,36 @@
+{
+  "name": "gas-modan-skelton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.3.0",
+    "cheerio": "^0.22.0",
+    "file-loader": "^0.9.0",
+    "gasify": "^0.1.0",
+    "webpack": "^1.14.0"
+  },
+  "scripts": {
+    "gasify": "rm -r dst && mkdir dst && browserify src/global.js -t [babelify --presets es2015 ] -p gasify -o dst/global.js",
+    "build": " webpack && npm run gasify && node ./inline.js",
+    "push": "npm run build && gapps push",
+    "watch": "mocha -w --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "babel":{
+   "presets":["es2015"]
+  },
+  "author": "",
+  "license": "ISC"
+}
